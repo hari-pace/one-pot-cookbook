@@ -1,0 +1,44 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* NAVBAR  */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 8%;
+}
+
+.navbar img {
+  width: 50px;
+  height: 60px;
+  padding-right: 10px;
+}
+
+.nav-logo {
+  display: flex;
+  font-size: 1.1em;
+  color: black;
+  text-shadow: 0.5px 0.5px #fab005;
+}
+.navbar .navlink * {
+  text-decoration: none;
+  margin: 15px;
+  color: white;
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-size: 1.2em;
+  border-radius: 5px;
+  padding: 10px 25px;
+  background-color: #47618f;
+}
+.navbar .navlink *:hover {
+  color: #838bb7;
+}
+
+.navbar .active {
+  background-color: #fab005;
+}

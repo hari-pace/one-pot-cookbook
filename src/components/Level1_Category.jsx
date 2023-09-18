@@ -27,6 +27,7 @@ const Level1_Category = ({ recipes }) => {
           ""
         )
       )}
+
       <button onClick={() => navigate("/")}>Back to home</button>
     </>
   );

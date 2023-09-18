@@ -1,0 +1,67 @@
+.meal-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 8%;
+  width: 80vw;
+}
+.meal-img {
+  display: block;
+  width: 35vw;
+  height: 25vw;
+  border-radius: 5px;
+  margin-top: 2%;
+}
+
+.meal-ingredients {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1%;
+  font-size: 1em;
+  line-height: 32px;
+}
+
+.meal-ingredients ul {
+  display: flex;
+  margin-top: 0.5%;
+}
+
+.meal-ingredients h2 {
+  font-size: 2em;
+  text-align: left;
+  margin-left: 5%;
+  text-decoration: underline;
+}
+
+.meal-instructions {
+  text-align: justify;
+  margin: 5% 8%;
+  font-size: 1em;
+  line-height: 32px;
+}
+
+.meal-instructions h2 {
+  font-size: 2em;
+  text-align: left;
+  text-decoration: underline;
+}
+
+button {
+  margin: 20px;
+  color: white;
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-size: 1.2em;
+  border-radius: 5px;
+  padding: 10px 25px;
+  background-color: #47618f;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #838bb7;
+}
+
+button:active {
+  background-color: #fab005;
+}

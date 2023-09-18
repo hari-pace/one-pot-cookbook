@@ -1,0 +1,48 @@
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.homepage img {
+  margin-left: 10%;
+  width: 300px;
+  height: 300px;
+  margin-top: 4%;
+}
+.homepage-heading {
+  margin-left: 10%;
+  font-size: 5em;
+  font-weight: lighter;
+  color: rgb(34, 35, 36);
+  text-shadow: 2px 2px #f1e0b7;
+  margin-left: 0;
+}
+
+.homepage-container {
+  background-image: url("/public/bgrd.png");
+  padding: 10px;
+  margin-top: 10%;
+}
+
+.homepage-img-container {
+  background-color: #fab005;
+  border-radius: 50px;
+  width: 60vw;
+  margin: 5% 15%;
+  padding: 1% 5%;
+}
+
+.homepage-link {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.homepage-img-container h2 {
+  font-size: 3.5em;
+  color: white;
+  text-shadow: 1px 1px #fab005;
+  font-weight: lighter;
+}

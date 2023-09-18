@@ -29,18 +29,20 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route
-          path="/:category"
-          element={<Level1_Category recipes={recipes} />}
-        />
-        <Route
-          path="/:category/:food"
-          element={<Level2_Meal recipes={recipes} />}
-        />
-      </Routes>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route
+            path="/:category"
+            element={<Level1_Category recipes={recipes} />}
+          />
+          <Route
+            path="/:category/:food"
+            element={<Level2_Meal recipes={recipes} />}
+          />
+        </Routes>
+      </div>
     </>
   );
 }
