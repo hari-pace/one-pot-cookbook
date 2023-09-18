@@ -30,7 +30,6 @@ const Homepage = ({ recipes, setRecipes, searchBar }) => {
   useEffect(() => {
     fetchRecipes();
   }, [searchBar]);
-
   return (
     <>
       <h1 className="homepage-heading">One-pot Recipes</h1>
