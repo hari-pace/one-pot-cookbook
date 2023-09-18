@@ -20,13 +20,35 @@ const Navbar = ({ recipes, searchBar, setSearchBar }) => {
         <h4>One-Pot Recipe</h4>
       </div>
       <div className="container-navbar">
-        <NavLink className="nav-link" to="/">
+        <NavLink
+          className="nav-link"
+          to="/"
+          style={({ isActive }) =>
+            isActive
+              ? {
+                  color: "white",
+                  background: "#fab005",
+                }
+              : { color: "white", background: "#47618f" }
+          }
+        >
           Home
         </NavLink>
         {filteredItems &&
           filteredItems.map((item) => (
             <div key={item.fields.category}>
-              <NavLink className="nav-link" to={`/${item.fields.category}`}>
+              <NavLink
+                className="nav-link"
+                to={`/${item.fields.category}`}
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        color: "white",
+                        background: "#fab005",
+                      }
+                    : { color: "white", background: "#47618f" }
+                }
+              >
                 {item.fields.category}
               </NavLink>
             </div>
