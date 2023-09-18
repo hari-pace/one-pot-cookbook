@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.footer_container {
+  background-color: #47619f;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1.875rem;
+  line-height: 1.5rem;
+}
+
+.medium {
+  color: white;
+  font-size: 1.25;
+  line-height: 2rem;
+}
+
+.large {
+  color: white;
+  font-size: 1.125rem;
+  line-height: 2rem;
+}
+
+.name_list {
+  color: white;
+  font-size: 1rem;
+  list-style-type: none;
+  line-height: 2rem;
+}
+
+.button {
+  background-color: #fab005;
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  font-size: 1.25rem;
+  box-shadow: 0.3rem 0.3rem 0.3rem 0.13rem rgba(0, 0, 0, 0.5);
+}
+
+.icons {
+  color: white;
+}
+
+.icon {
+  margin: 1.25rem;
+}
