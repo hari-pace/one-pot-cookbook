@@ -8,6 +8,7 @@ import Level2_Meal from "./components/Level2_Meal";
 import Navbar from "./components/Navbar";
 import Level1_Category from "./components/Level1_Category";
 import Layout from "./components/Layout";
+import Footer from "./components/Footer";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -48,6 +49,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
+      <Footer />
     </>
   );
 }
