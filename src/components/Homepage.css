@@ -1,0 +1,38 @@
+.container-navbar-searchbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.container-navbar {
+  display: flex;
+  min-width: 50%;
+  justify-content: space-around;
+  align-items: center;
+  margin: 3px;
+}
+
+#searchFiled {
+  border-radius: 30px;
+  height: 3em;
+}
+
+#searchBtn {
+  height: 3em;
+  background-color: rgb(96, 96, 114);
+  border-radius: 30px;
+}
+
+.container-searchbar-btn {
+  min-width: 20%;
+  display: flex;
+  justify-content: end;
+}
+
+.container-level1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 50%;
+  justify-content: center;
+}
