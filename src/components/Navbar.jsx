@@ -5,12 +5,14 @@ import filterDuplicate from "../components/utils/Filterduplicate";
 const Navbar = ({ recipes, searchBar, setSearchBar }) => {
   const [value, setValue] = useState("");
 
+  //Items will be filtered redundant category on the object
   const filteredItems = filterDuplicate({ recipes });
   const handleSearchBar = (e) => {
     e.preventDefault();
     setSearchBar(e.target.value);
     setValue("");
   };
+
   return (
     <div className="container-navbar-searchbar">
       <div className="container-navbar">

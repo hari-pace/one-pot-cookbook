@@ -13,6 +13,7 @@ const Homepage = ({ recipes, setRecipes, searchBar }) => {
     accessToken: API_access_token,
   });
 
+  //Fetch data
   async function fetchRecipes() {
     const entryItems = await client.getEntries();
     if (searchBar === "") {
@@ -30,6 +31,7 @@ const Homepage = ({ recipes, setRecipes, searchBar }) => {
   useEffect(() => {
     fetchRecipes();
   }, [searchBar]);
+
   return (
     <>
       <h1 className="homepage-heading">One-pot Recipes</h1>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { createClient } from "contentful";
 import { Routes, Route } from "react-router-dom";
+
 import Homepage from "./components/Homepage";
 import "./App.css";
 import Level2_Meal from "./components/Level2_Meal";
@@ -14,7 +15,6 @@ function App() {
 
   return (
     <>
-      {/* <Navbar /> */}
       <Routes>
         <Route>
           <Route

@@ -29,3 +29,10 @@
   display: flex;
   justify-content: end;
 }
+
+.container-level1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 50%;
+  justify-content: center;
+}
