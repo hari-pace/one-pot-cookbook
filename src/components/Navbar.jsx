@@ -15,12 +15,18 @@ const Navbar = ({ recipes, searchBar, setSearchBar }) => {
 
   return (
     <div className="container-navbar-searchbar">
+      <div className="nav-logo">
+        <img src="public\fish-pot.png" alt="logo" />
+        <h4>One-Pot Recipe</h4>
+      </div>
       <div className="container-navbar">
-        <NavLink to="/">Home</NavLink>
+        <NavLink className="nav-link" to="/">
+          Home
+        </NavLink>
         {filteredItems &&
           filteredItems.map((item) => (
             <div key={item.fields.category}>
-              <NavLink to={`/${item.fields.category}`}>
+              <NavLink className="nav-link" to={`/${item.fields.category}`}>
                 {item.fields.category}
               </NavLink>
             </div>

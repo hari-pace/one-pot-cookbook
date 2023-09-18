@@ -10,7 +10,7 @@ const Level1_Category = ({ recipes }) => {
   const { category } = useParams();
 
   return (
-    <>
+    <div className="level1-wrapper">
       <h1>{category.charAt(0).toUpperCase() + category.slice(1)} recipes</h1>
       <div className="container-level1">
         {recipes.map((recipe) =>
@@ -46,8 +46,10 @@ const Level1_Category = ({ recipes }) => {
           )
         )}
       </div>
-      <button onClick={() => navigate("/")}>Back to home</button>
-    </>
+      <button className="btn-back" onClick={() => navigate("/")}>
+        Back to home
+      </button>
+    </div>
   );
 };
 
