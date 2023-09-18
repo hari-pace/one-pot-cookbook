@@ -10,31 +10,33 @@ import Layout from "./components/Layout";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
-
-  const API_space = import.meta.env.VITE_API_SPACE;
-  const API_access_token = import.meta.env.VITE_API_ACCESS_TOKEN;
-
-  const client = createClient({
-    space: API_space,
-    accessToken: API_access_token,
-  });
-
-  async function fetchRecipes() {
-    const entryItems = await client.getEntries();
-    setRecipes(entryItems.items);
-  }
-
-  useEffect(() => {
-    fetchRecipes();
-  }, []);
+  const [searchBar, setSearchBar] = useState("");
 
   return (
     <>
       {/* <Navbar /> */}
       <Routes>
         <Route>
-          <Route path="/" element={<Layout recipes={recipes} />}>
-            <Route index element={<Homepage />} />
+          <Route
+            path="/"
+            element={
+              <Layout
+                recipes={recipes}
+                searchBar={searchBar}
+                setSearchBar={setSearchBar}
+              />
+            }
+          >
+            <Route
+              index
+              element={
+                <Homepage
+                  recipes={recipes}
+                  setRecipes={setRecipes}
+                  searchBar={searchBar}
+                />
+              }
+            />
             <Route
               path="/:category"
               element={<Level1_Category recipes={recipes} />}
