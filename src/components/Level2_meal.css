@@ -2,6 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.meal-container h1 {
+  text-align: center;
+  font-size: 3em;
+  color: black;
+  text-shadow: 0.5px 0.5px #fab005;
 }
 
 .ingredients-wrapper {
@@ -22,20 +30,21 @@
 .meal-ingredients {
   display: flex;
   flex-direction: column;
-  margin-left: 1%;
-  font-size: 1em;
-  line-height: 32px;
+  margin-left: 5%;
+  font-size: 1.1em;
+  line-height: 35px;
 }
 
 .meal-ingredients ul {
   display: flex;
-  margin-top: 0.5%;
+  margin-top: 2%;
 }
 
 .meal-ingredients h2 {
   font-size: 2em;
   text-align: left;
   margin-left: 5%;
+  margin-bottom: 3%;
   text-decoration: underline;
 }
 
@@ -47,6 +56,7 @@
 }
 
 .meal-instructions h2 {
+  margin-bottom: 2%;
   font-size: 2em;
   text-align: left;
   text-decoration: underline;

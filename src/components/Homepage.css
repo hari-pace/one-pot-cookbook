@@ -28,23 +28,26 @@
 /* NAVBAR  */
 .container-navbar-searchbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-bottom: 8%;
 }
 .container-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 10%;
 }
 
 .container-navbar-searchbar img {
-  width: 50px;
-  height: 60px;
-  padding-right: 10px;
+  width: 80px;
+  height: 80px;
+  padding-right: 5px;
+  margin-left: 10%;
 }
 
 .nav-logo {
   display: flex;
+  align-items: center;
+  width: 20vw;
 }
 
 .nav-logo h4 {
@@ -74,24 +77,21 @@
   background-color: #fab005;
 }
 
-/* .container-navbar .navlink .active {
-  background-color: #fab005;
-} */
-
 /* HOME PAGE */
 .homepage {
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: center;
 }
 
 .homepage img {
-  margin-left: 10%;
   width: 300px;
   height: 300px;
   margin-top: 4%;
 }
+
 .homepage-heading {
+  margin-top: 10%;
   margin-left: 10%;
   font-size: 5em;
   font-weight: lighter;
@@ -110,7 +110,7 @@
   background-color: #fab005;
   border-radius: 50px;
   width: 60vw;
-  margin: 5% 15%;
+  margin: 5% 20%;
   padding: 1% 5%;
 }
 
