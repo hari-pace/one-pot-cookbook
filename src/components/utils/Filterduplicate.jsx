@@ -1,6 +1,6 @@
 // Filter items by search
-export default function filterDuplicate({ recipes }) {
-  const items = recipes;
+export default function filterDuplicate({ recipenav }) {
+  const items = recipenav;
   const filteredItems =
     items &&
     items.reduce((accumulator, current) => {

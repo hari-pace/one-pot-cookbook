@@ -10,10 +10,11 @@ import Level1_Category from "./components/Level1_Category";
 import Layout from "./components/Layout";
 import Footer from "./components/Footer";
 
-
 function App() {
+  const [recipenav, setRecipenav] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [searchBar, setSearchBar] = useState("");
+  const [recipesSearch, setRecipesSearch] = useState([]);
 
   return (
     <>
@@ -23,7 +24,8 @@ function App() {
             path="/"
             element={
               <Layout
-                recipes={recipes}
+                recipenav={recipenav}
+                recipesSearch={recipesSearch}
                 searchBar={searchBar}
                 setSearchBar={setSearchBar}
               />
@@ -33,9 +35,11 @@ function App() {
               index
               element={
                 <Homepage
+                  setRecipenav={setRecipenav}
                   recipes={recipes}
                   setRecipes={setRecipes}
                   searchBar={searchBar}
+                  setRecipesSearch={setRecipesSearch}
                 />
               }
             />
@@ -51,7 +55,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
-    
+
       <Footer />
     </>
   );

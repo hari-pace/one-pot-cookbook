@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import filterDuplicate from "../components/utils/Filterduplicate";
 
-const Navbar = ({ recipes, searchBar, setSearchBar }) => {
+const Navbar = ({ recipenav, setSearchBar }) => {
   const [value, setValue] = useState("");
 
   //Items will be filtered redundant category on the object
-  const filteredItems = filterDuplicate({ recipes });
+  const filteredItems = filterDuplicate({ recipenav });
   const handleSearchBar = (e) => {
     e.preventDefault();
     setSearchBar(e.target.value);
@@ -38,6 +38,9 @@ const Navbar = ({ recipes, searchBar, setSearchBar }) => {
           filteredItems.map((item) => (
             <div key={item.fields.category}>
               <NavLink
+                onClick={() => {
+                  setSearchBar("");
+                }}
                 className="nav-link"
                 to={`/${item.fields.category}`}
                 style={({ isActive }) =>

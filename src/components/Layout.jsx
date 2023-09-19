@@ -1,17 +1,30 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useParams } from "react-router-dom";
 
 import Navbar from "./Navbar";
+import CardInter from "./Card";
 
 //Layout used to set navbar and connecting the route
-const Layout = ({ recipes, searchBar, setSearchBar }) => {
+const Layout = ({ recipenav, recipesSearch, searchBar, setSearchBar }) => {
   return (
     <>
       <main>
-        <Navbar
-          recipes={recipes}
-          searchBar={searchBar}
-          setSearchBar={setSearchBar}
-        />
+        <Navbar recipenav={recipenav} setSearchBar={setSearchBar} />
+        <div className="container-level1 ">
+          {recipesSearch && searchBar.length > 0
+            ? recipesSearch.map((recipe) => (
+                <div key={recipe.fields.urlname}>
+                  <NavLink
+                    onClick={() => {
+                      setSearchBar("");
+                    }}
+                    to={`${recipe.fields.category}/${recipe.fields.urlname}`}
+                  >
+                    {<CardInter recipe={recipe} />}
+                  </NavLink>
+                </div>
+              ))
+            : null}
+        </div>
         <Outlet />
       </main>
     </>
