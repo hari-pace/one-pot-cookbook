@@ -9,7 +9,7 @@ const Layout = ({ recipenav, recipesSearch, searchBar, setSearchBar }) => {
     <>
       <main>
         <Navbar recipenav={recipenav} setSearchBar={setSearchBar} />
-        <div className="container-level1 ">
+        <div className="container-search-items">
           {recipesSearch && searchBar.length > 0
             ? recipesSearch.map((recipe) => (
                 <div key={recipe.fields.urlname}>
