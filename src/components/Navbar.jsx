@@ -16,7 +16,7 @@ const Navbar = ({ recipenav, setSearchBar }) => {
   return (
     <div className="container-navbar-searchbar">
       <div className="nav-logo">
-        <img src="public\fish-pot.png" alt="logo" />
+        <img src="./fish-pot.png" alt="logo" />
         <h4>One-Pot Recipe</h4>
       </div>
       <div className="container-navbar">
@@ -60,6 +60,9 @@ const Navbar = ({ recipenav, setSearchBar }) => {
       <div className="container-searchbar-btn">
         <form>
           <input
+            style={{
+              padding: 10,
+            }}
             id="searchFiled"
             placeholder="Search by category"
             onChange={(e) => {

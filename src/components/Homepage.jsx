@@ -45,7 +45,7 @@ const Homepage = ({
   return (
     <div>
       <div className="homepage">
-        <img src="../../public/fish-pot.png" alt="" />
+        <img src="./fish-pot.png" alt="fish-img" />
         <h1 className="homepage-heading">One-pot Recipes</h1>
       </div>
       <Banner_top />
@@ -53,11 +53,7 @@ const Homepage = ({
         <div className="homepage-img-container">
           <Link className="homepage-link" to="/meat">
             <h2>Meat recipes</h2>
-            <img
-              className="homepage-img"
-              src="../../public/meat-pot.png"
-              alt="meat-img"
-            />
+            <img className="homepage-img" src="./meat-pot.png" alt="meat-img" />
           </Link>
         </div>
         <div className="homepage-img-container">
@@ -65,7 +61,7 @@ const Homepage = ({
             <h2>Fish recipes</h2>
             <img
               className="homepage-img"
-              src="../../public/meat2-pot.png"
+              src="./meat2-pot.png"
               alt="fish-img"
             />
           </Link>
@@ -75,7 +71,7 @@ const Homepage = ({
             <h2>Vegan recipes</h2>
             <img
               className="homepage-img"
-              src="../../public/veggie-pot.png"
+              src="./veggie-pot.png"
               alt="vegan-img"
             />
           </Link>
