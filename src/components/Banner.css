@@ -1,0 +1,33 @@
+.banner {
+  text-align: center;
+  margin: 10% 5%;
+  width: 60vw;
+  margin-left: 20%;
+}
+
+.banner h3 {
+  font-size: 1.5em;
+  text-align: justify;
+  line-height: 40px;
+  text-shadow: 0.5px 0.5px #838bb7;
+  font-weight: lighter;
+}
+
+/* Banner 2 */
+
+.banner2 {
+  text-align: center;
+  width: 100vw;
+  height: 30em;
+  color: #fab005;
+  background-color: #47618f;
+}
+
+.banner2 h2 {
+  font-size: 2.7em;
+  padding-top: 12%;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0.5px 0.5px black;
+  margin: 14%;
+}
