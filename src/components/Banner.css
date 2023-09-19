@@ -1,11 +1,11 @@
-.banner {
+.banner_bottom {
   text-align: center;
   margin: 10% 5%;
   width: 60vw;
   margin-left: 20%;
 }
 
-.banner h3 {
+.banner_bottom h3 {
   font-size: 1.5em;
   text-align: justify;
   line-height: 40px;
@@ -15,7 +15,7 @@
 
 /* Banner 2 */
 
-.banner2 {
+.banner_top {
   text-align: center;
   width: 100vw;
   height: 30em;
@@ -23,11 +23,11 @@
   background-color: #47618f;
 }
 
-.banner2 h2 {
+.banner_top h2 {
   font-size: 2.7em;
   padding-top: 12%;
   text-align: center;
-  font-weight: bold;
-  text-shadow: 0.5px 0.5px black;
+  font-weight: normal;
+  text-shadow: 0.5px 0.5px white;
   margin: 14%;
 }

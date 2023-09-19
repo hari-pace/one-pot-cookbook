@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Homepage.css";
 import { createClient } from "contentful";
-import Banner2 from "./Banner2";
+import Banner_top from "./Banner_top";
+import Banner_bottom from "./Banner_bottom";
 
 const Homepage = ({ recipes, setRecipes, searchBar }) => {
   // Setting evns
@@ -34,12 +35,12 @@ const Homepage = ({ recipes, setRecipes, searchBar }) => {
   }, [searchBar]);
 
   return (
-    <>
+    <div>
       <div className="homepage">
         <img src="public\fish-pot.png" alt="" />
         <h1 className="homepage-heading">One-pot Recipes</h1>
       </div>
-      <Banner2 />
+      <Banner_top />
       <div className="homepage-container">
         <div className="homepage-img-container">
           <Link className="homepage-link" to="/meat">
@@ -72,7 +73,8 @@ const Homepage = ({ recipes, setRecipes, searchBar }) => {
           </Link>
         </div>
       </div>
-    </>
+      <Banner_bottom />
+    </div>
   );
 };
 
