@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Homepage.css";
 import { createClient } from "contentful";
+import Banner2 from "./Banner2";
 
 const Homepage = ({ recipes, setRecipes, searchBar }) => {
   // Setting evns
@@ -38,6 +39,7 @@ const Homepage = ({ recipes, setRecipes, searchBar }) => {
         <img src="public\fish-pot.png" alt="" />
         <h1 className="homepage-heading">One-pot Recipes</h1>
       </div>
+      <Banner2 />
       <div className="homepage-container">
         <div className="homepage-img-container">
           <Link className="homepage-link" to="/meat">
