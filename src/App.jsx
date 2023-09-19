@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar";
 import Level1_Category from "./components/Level1_Category";
 import Layout from "./components/Layout";
 import Footer from "./components/Footer";
-import Banner from "./components/Banner";
+
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -51,7 +51,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
-      <Banner />
+    
       <Footer />
     </>
   );
