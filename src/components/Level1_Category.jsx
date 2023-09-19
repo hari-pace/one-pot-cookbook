@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { useNavigate, useParams } from "react-router-dom";
 import { Card } from "antd";
 import Meta from "antd/es/card/Meta";
+
+import CardInter from "./Card";
+
 const Level1_Category = ({ recipes }) => {
   const navigate = useNavigate();
 
@@ -17,28 +20,7 @@ const Level1_Category = ({ recipes }) => {
           recipe.fields.category === category ? (
             <div className="category-container" key={recipe.sys.id}>
               <Link to={recipe.fields.urlname}>
-                {
-                  <Card
-                    hoverable
-                    style={{
-                      width: 240,
-                      margin: "3rem",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                    cover={
-                      <img
-                        src={recipe.fields.image.fields.file.url}
-                        alt={recipe.fields.recipeName}
-                      />
-                    }
-                  >
-                    <Meta
-                      title={recipe.fields.name}
-                      description={`Recepie: ${recipe.fields.name}`}
-                    />
-                  </Card>
-                }
+                {<CardInter recipe={recipe} />}
               </Link>
             </div>
           ) : (

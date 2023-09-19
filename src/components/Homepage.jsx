@@ -5,7 +5,13 @@ import { createClient } from "contentful";
 import Banner_top from "./Banner_top";
 import Banner_bottom from "./Banner_bottom";
 
-const Homepage = ({ recipes, setRecipes, searchBar }) => {
+const Homepage = ({
+  setRecipenav,
+  recipes,
+  setRecipes,
+  searchBar,
+  setRecipesSearch,
+}) => {
   // Setting evns
   const API_space = import.meta.env.VITE_API_SPACE;
   const API_access_token = import.meta.env.VITE_API_ACCESS_TOKEN;
@@ -18,15 +24,17 @@ const Homepage = ({ recipes, setRecipes, searchBar }) => {
   //Fetch data
   async function fetchRecipes() {
     const entryItems = await client.getEntries();
+
     if (searchBar === "") {
       setRecipes(entryItems.items);
+      setRecipenav(entryItems.items);
+      setRecipesSearch([]);
     } else {
       const filterItem = entryItems.items.filter((item) => {
         return item.fields.category === searchBar;
       });
-
-      setRecipes(Array.isArray(filterItem.items) ? filterItem.items : []);
-      console.log(filterItem);
+      setRecipenav(entryItems.items);
+      setRecipesSearch(filterItem);
     }
   }
 
