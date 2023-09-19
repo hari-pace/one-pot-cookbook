@@ -19,3 +19,11 @@
   color: black;
   text-shadow: 0.5px 0.5px #fab005;
 }
+
+.container-search-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+}

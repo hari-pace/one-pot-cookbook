@@ -33,6 +33,7 @@
 
 .button {
   background-color: #fab005;
+  cursor: pointer;
   padding: 1.25rem;
   border-radius: 0.625rem;
   font-size: 1.25rem;
@@ -45,4 +46,5 @@
 
 .icon {
   margin: 1.25rem;
+  cursor: pointer;
 }
