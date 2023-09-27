@@ -12,6 +12,7 @@ const Level1_Category = ({ recipes }) => {
 
   const { category } = useParams();
 
+  // console.log(recipes);
   return (
     <div className="level1-wrapper">
       <h1>{category.charAt(0).toUpperCase() + category.slice(1)} recipes</h1>
