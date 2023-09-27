@@ -11,17 +11,9 @@ export default function CardInter({ recipe }) {
         justifyContent: "center",
         alignItems: "center",
       }}
-      cover={
-        <img
-          src={recipe.fields.image.fields.file.url}
-          alt={recipe.fields.recipeName}
-        />
-      }
+      cover={<img src={recipe.image} alt={recipe.name} />}
     >
-      <Meta
-        title={recipe.fields.name}
-        description={`Recipe: ${recipe.fields.name}`}
-      />
+      <Meta title={recipe.name} description={`Recipe: ${recipe.name}`} />
     </Card>
   );
 }

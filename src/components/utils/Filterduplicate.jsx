@@ -4,11 +4,7 @@ export default function filterDuplicate({ recipenav }) {
   const filteredItems =
     items &&
     items.reduce((accumulator, current) => {
-      if (
-        !accumulator.find(
-          (item) => item.fields.category === current.fields.category
-        )
-      ) {
+      if (!accumulator.find((item) => item.category === current.category)) {
         accumulator.push(current);
       }
 

@@ -36,13 +36,13 @@ const Navbar = ({ recipenav, setSearchBar }) => {
         </NavLink>
         {filteredItems &&
           filteredItems.map((item) => (
-            <div key={item.fields.category}>
+            <div key={item.category}>
               <NavLink
                 onClick={() => {
                   setSearchBar("");
                 }}
                 className="nav-link"
-                to={`/${item.fields.category}`}
+                to={`/${item.category}`}
                 style={({ isActive }) =>
                   isActive
                     ? {
@@ -52,7 +52,7 @@ const Navbar = ({ recipenav, setSearchBar }) => {
                     : { color: "white", background: "#47618f" }
                 }
               >
-                {item.fields.category}
+                {item.category}
               </NavLink>
             </div>
           ))}

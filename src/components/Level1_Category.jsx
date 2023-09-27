@@ -17,11 +17,9 @@ const Level1_Category = ({ recipes }) => {
       <h1>{category.charAt(0).toUpperCase() + category.slice(1)} recipes</h1>
       <div className="container-level1">
         {recipes.map((recipe) =>
-          recipe.fields.category === category ? (
-            <div className="category-container" key={recipe.sys.id}>
-              <Link to={recipe.fields.urlname}>
-                {<CardInter recipe={recipe} />}
-              </Link>
+          recipe.category === category ? (
+            <div className="category-container" key={recipe.id}>
+              <Link to={recipe.urlname}>{<CardInter recipe={recipe} />}</Link>
             </div>
           ) : (
             ""
