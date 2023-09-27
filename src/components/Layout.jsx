@@ -12,12 +12,12 @@ const Layout = ({ recipenav, recipesSearch, searchBar, setSearchBar }) => {
         <div className="container-search-items">
           {recipesSearch && searchBar.length > 0
             ? recipesSearch.map((recipe) => (
-                <div key={recipe.fields.urlname}>
+                <div key={recipe.urlname}>
                   <NavLink
                     onClick={() => {
                       setSearchBar("");
                     }}
-                    to={`${recipe.fields.category}/${recipe.fields.urlname}`}
+                    to={`${recipe.category}/${recipe.urlname}`}
                   >
                     {<CardInter recipe={recipe} />}
                   </NavLink>

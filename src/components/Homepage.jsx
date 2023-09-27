@@ -13,6 +13,7 @@ const Homepage = ({
   setRecipesSearch,
 }) => {
   // Setting evns
+  // Change the envs api access after deploying if necessary
   const API_space = import.meta.env.VITE_API_SPACE;
   const API_access_token = import.meta.env.VITE_API_ACCESS_TOKEN;
 
@@ -23,17 +24,20 @@ const Homepage = ({
 
   //Fetch data
   async function fetchRecipes() {
-    const entryItems = await client.getEntries();
+    //Change tha path here after building and deployed from render.com
+    const URL = "http://localhost:8080/cookbook";
+    const fetchData = await fetch(URL);
+    const data = await fetchData.json();
 
     if (searchBar === "") {
-      setRecipes(entryItems.items);
-      setRecipenav(entryItems.items);
+      setRecipes(data);
+      setRecipenav(data);
       setRecipesSearch([]);
     } else {
-      const filterItem = entryItems.items.filter((item) => {
-        return item.fields.category === searchBar;
+      const filterItem = data.filter((item) => {
+        return item.category === searchBar;
       });
-      setRecipenav(entryItems.items);
+      setRecipenav(data);
       setRecipesSearch(filterItem);
     }
   }
