@@ -15,6 +15,7 @@ function App() {
   const [recipes, setRecipes] = useState([]);
   const [searchBar, setSearchBar] = useState("");
   const [recipesSearch, setRecipesSearch] = useState([]);
+  const [recipeFetchToggle, setRecipeFetchToggle] = useState(false);
 
   return (
     <>
@@ -40,6 +41,8 @@ function App() {
                   setRecipes={setRecipes}
                   searchBar={searchBar}
                   setRecipesSearch={setRecipesSearch}
+                  recipeFetchToggle={recipeFetchToggle}
+                  setRecipeFetchToggle={setRecipeFetchToggle}
                 />
               }
             />

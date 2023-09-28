@@ -1,16 +1,50 @@
 import React from "react";
 import "./Level1_Category.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Card } from "antd";
 import Meta from "antd/es/card/Meta";
 
 import CardInter from "./Card";
 
-const Level1_Category = ({ recipes }) => {
+const Level1_Category = ({ recipes, setRecipeFetchToggle }) => {
+  const [newName, setNewName] = useState("");
+  const [newURLName, setNewURLName] = useState("");
+  const [newImage, setNewImage] = useState("");
+  const [newIngredients, setNewIngredients] = useState("");
+  const [newInstructions, setNewInstructions] = useState("");
+
   const navigate = useNavigate();
 
   const { category } = useParams();
+
+  const addNewRecipe = async () => {
+    const response = await fetch(
+      "https://cookbook-backend-n5w0.onrender.com/cookbook",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          name: newName,
+          image: newImage,
+          category: category,
+          ingredients: newIngredients,
+          instructions: newInstructions,
+          urlname: newURLName,
+        }),
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+      }
+    );
+    const data = await response.json();
+    console.log(data);
+    alert(`You added the recipe ${data[0].name} to the cookbook!`);
+    setNewName("");
+    setNewURLName("");
+    setNewImage("");
+    setNewIngredients("");
+    setNewInstructions("");
+    setRecipeFetchToggle(true);
+  };
 
   // console.log(recipes);
   return (
@@ -27,6 +61,50 @@ const Level1_Category = ({ recipes }) => {
           )
         )}
       </div>
+      <form className="new-recipe-form">
+        <div className="input-new-recipe">
+          <h2>Add new recipe</h2>
+
+          <label htmlFor="name">Recipe name:</label>
+          <input
+            id="name"
+            value={newName}
+            onChange={(e) => setNewName(e.target.value)}
+            placeholder="Add recipe name here..."
+          />
+          <label htmlFor="url-name">URL name:</label>
+          <input
+            id="url-name"
+            value={newURLName}
+            onChange={(e) => setNewURLName(e.target.value)}
+            placeholder="Add recipe URL name here (recipe name separated by '-' instead of spaces)..."
+          />
+          <label htmlFor="category">Category:</label>
+          <input id="category" value={category} />
+          <label htmlFor="image">Image:</label>
+          <input
+            id="image"
+            value={newImage}
+            onChange={(e) => setNewImage(e.target.value)}
+            placeholder="Add image URL here..."
+          />
+          <label htmlFor="ingredients">Ingredients:</label>
+          <textarea
+            id="ingredients"
+            value={newIngredients}
+            onChange={(e) => setNewIngredients(e.target.value)}
+            placeholder="Add ingredients list here (separate each ingredient with ';')..."
+          />
+          <label htmlFor="instructions">Instructions:</label>
+          <textarea
+            id="instructions"
+            value={newInstructions}
+            onChange={(e) => setNewInstructions(e.target.value)}
+            placeholder="Add instructions here..."
+          />
+          <button onClick={addNewRecipe}>Submit</button>
+        </div>
+      </form>
       <button className="btn-back" onClick={() => navigate("/")}>
         Back to home
       </button>
