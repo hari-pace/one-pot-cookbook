@@ -11,6 +11,8 @@ const Homepage = ({
   setRecipes,
   searchBar,
   setRecipesSearch,
+  recipeFetchToggle,
+  setRecipeFetchToggle,
 }) => {
   // Setting evns
   // Change the envs api access after deploying if necessary
@@ -43,7 +45,8 @@ const Homepage = ({
 
   useEffect(() => {
     fetchRecipes();
-  }, [searchBar]);
+    setRecipeFetchToggle(false);
+  }, [searchBar, recipeFetchToggle]);
 
   return (
     <div>
