@@ -24,8 +24,7 @@ const Homepage = ({
 
   //Fetch data
   async function fetchRecipes() {
-    //Change tha path here after building and deployed from render.com
-    const URL = "http://localhost:8080/cookbook";
+    const URL = "https://cookbook-backend-n5w0.onrender.com/cookbook";
     const fetchData = await fetch(URL);
     const data = await fetchData.json();
 

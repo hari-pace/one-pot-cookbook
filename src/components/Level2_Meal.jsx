@@ -7,8 +7,6 @@ const Level2_Meal = ({ recipes }) => {
 
   const { food } = useParams();
 
-  console.log(recipes);
-
   return (
     <div className="meal-wrapper">
       {recipes.map((recipe) =>
@@ -25,15 +23,12 @@ const Level2_Meal = ({ recipes }) => {
                 <h2>Ingredients</h2>
 
                 {
-                  <ul key={recipe.id}>
-                    <li className="list">{recipe.ingredients}</li>
+                  <ul className="ingredient-container" key={recipe.id}>
+                    {recipe.ingredients.split(";").map((ingredient) => (
+                      <li>{ingredient}</li>
+                    ))}
                   </ul>
                 }
-                {/* {recipe.ingredients.map((ingredient, index) => (
-                  <ul key={index}>
-                    <li className="list">{ingredient}</li>
-                  </ul>
-                ))} */}
               </div>
             </div>
             <div className="meal-instructions">

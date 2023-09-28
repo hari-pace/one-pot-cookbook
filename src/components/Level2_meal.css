@@ -19,6 +19,12 @@
   margin: 8%;
   width: 80vw;
 }
+
+.ingredient-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .meal-img {
   display: block;
   width: 35vw;
