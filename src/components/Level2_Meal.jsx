@@ -7,6 +7,30 @@ const Level2_Meal = ({ recipes }) => {
 
   const { food } = useParams();
 
+  let category_recipe;
+
+  function deleteItem() {
+    alert("OH oh you need permision! :)");
+    const userInput = prompt("Enter your input: ");
+    if (userInput === "1234") {
+      fetchData(category_recipe);
+      alert("Your page is deleted go back home");
+    }
+  }
+
+  const fetchData = async (category) => {
+    const URL_to_delete =
+      "https://cookbook-backend-n5w0.onrender.com/cookbook/" +
+      category +
+      "/" +
+      food;
+    await fetch(URL_to_delete, {
+      method: "DELETE",
+    })
+      .then((res) => res.text())
+      .then((res) => console.log(res));
+  };
+
   return (
     <div className="meal-wrapper">
       {recipes.map((recipe) =>
@@ -27,6 +51,7 @@ const Level2_Meal = ({ recipes }) => {
                     {recipe.ingredients.split(";").map((ingredient) => (
                       <li>{ingredient}</li>
                     ))}
+                    {(category_recipe = recipe.category)}
                   </ul>
                 }
               </div>
@@ -38,6 +63,14 @@ const Level2_Meal = ({ recipes }) => {
           </div>
         ) : null
       )}
+      <button
+        className="btn-back"
+        onClick={() => {
+          deleteItem();
+        }}
+      >
+        Delete Recipe
+      </button>
       <button className="btn-back" onClick={() => navigate(-1)}>
         Back to previous page
       </button>
