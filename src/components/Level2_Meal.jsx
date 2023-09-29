@@ -28,9 +28,23 @@ const Level2_Meal = ({ recipes }) => {
       food;
     await fetch(URL_to_delete, {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: 1 }),
     })
-      .then((res) => res.text())
-      .then((res) => console.log(res));
+      .then((response) => {
+        if (response.ok) {
+          window.location = window.location.href
+            .replace(/\/[^\/]*$/, "")
+            .replace(/\/[^\/]*$/, "");
+        } else {
+          throw new Error("Error deleting item");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
