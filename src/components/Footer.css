@@ -48,3 +48,11 @@
   margin: 1.25rem;
   cursor: pointer;
 }
+
+@media screen and (max-width: 750px) and (min-width: 300px) {
+  .footer_container {
+    display: flex;
+    flex-direction: column;
+gap: 20px;
+  
+}
