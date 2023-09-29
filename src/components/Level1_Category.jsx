@@ -35,12 +35,20 @@ const Level1_Category = ({ recipes, setRecipeFetchToggle }) => {
         }),
         headers: { "Content-type": "application/json; charset=UTF-8" },
       }
-    );
-    const data = await response.json();
-    console.log(data);
-    alert(
-      `You added the recipe ${data[0].name} under the category ${data[0].category}! Please go back to the home page.`
-    );
+    )
+      .then((response) => {
+        if (response.ok) {
+          window.location = window.location.href
+            .replace(/\/[^\/]*$/, "")
+            .replace(/\/[^\/]*$/, "");
+        } else {
+          throw new Error("Error post item");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
     setNewName("");
     setNewURLName("");
     setNewImage("");
