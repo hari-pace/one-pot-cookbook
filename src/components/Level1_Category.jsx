@@ -66,55 +66,58 @@ const Level1_Category = ({ recipes, setRecipeFetchToggle }) => {
       </div>
       <div className="input-new-recipe">
         <h2>Add new recipe</h2>
-
-        <label htmlFor="name">Recipe name:</label>
-        <input
-          id="name"
-          value={newName}
-          onChange={(e) => setNewName(e.target.value)}
-          placeholder="Add recipe name here..."
-        />
-        <label htmlFor="url-name">URL name:</label>
-        <input
-          id="url-name"
-          value={newURLName}
-          onChange={(e) => setNewURLName(e.target.value)}
-          placeholder="Add recipe URL name here (recipe name separated by '-' instead of spaces)..."
-        />
-        <label htmlFor="category">Category:</label>
-        <input
-          id="category"
-          value={newCategory}
-          onChange={(e) => setNewCategory(e.target.value)}
-          placeholder="Add category..."
-        />
-        <label htmlFor="image">Image:</label>
-        <input
-          id="image"
-          value={newImage}
-          onChange={(e) => setNewImage(e.target.value)}
-          placeholder="Add image URL here..."
-        />
-        <label htmlFor="ingredients">Ingredients:</label>
-        <textarea
-          id="ingredients"
-          value={newIngredients}
-          onChange={(e) => setNewIngredients(e.target.value)}
-          placeholder="Add ingredients list here (separate each ingredient with ';')..."
-        />
-        <label htmlFor="instructions">Instructions:</label>
-        <textarea
-          id="instructions"
-          value={newInstructions}
-          onChange={(e) => setNewInstructions(e.target.value)}
-          placeholder="Add instructions here..."
-        />
-        <button onClick={addNewRecipe}>Submit</button>
+        <div className="input-wrapper">
+          <label htmlFor="name">Recipe name:</label>
+          <input
+            id="name"
+            value={newName}
+            onChange={(e) => setNewName(e.target.value)}
+            placeholder="Add recipe name here..."
+          />
+          <label htmlFor="url-name">URL name:</label>
+          <input
+            id="url-name"
+            value={newURLName}
+            onChange={(e) => setNewURLName(e.target.value)}
+            placeholder="Add recipe URL name here (recipe name separated by '-' instead of spaces)..."
+          />
+          <label htmlFor="category">Category:</label>
+          <input
+            id="category"
+            value={newCategory}
+            onChange={(e) => setNewCategory(e.target.value)}
+            placeholder="Add category..."
+          />
+          <label htmlFor="image">Image:</label>
+          <input
+            id="image"
+            value={newImage}
+            onChange={(e) => setNewImage(e.target.value)}
+            placeholder="Add image URL here..."
+          />
+          <label htmlFor="ingredients">Ingredients:</label>
+          <textarea
+            id="ingredients"
+            value={newIngredients}
+            onChange={(e) => setNewIngredients(e.target.value)}
+            placeholder="Add ingredients list here (separate each ingredient with ';')..."
+          />
+          <label htmlFor="instructions">Instructions:</label>
+          <textarea
+            id="instructions"
+            value={newInstructions}
+            onChange={(e) => setNewInstructions(e.target.value)}
+            placeholder="Add instructions here..."
+          />
+          <button onClick={addNewRecipe}>Submit</button>
+        </div>
       </div>
-
-      <button className="btn-back" onClick={() => navigate("/")}>
-        Back to home
-      </button>
+      <div className="back-home-btn">
+        <img src="./fish-pot.png" alt="fish-img" />
+        <button className="btn-back" onClick={() => navigate("/")}>
+          Back to home
+        </button>
+      </div>
     </div>
   );
 };

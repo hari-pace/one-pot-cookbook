@@ -22,7 +22,7 @@ const Level2_Meal = ({ recipes }) => {
     const userInput = prompt("Enter the password: ");
     if (userInput === "1234") {
       fetchData(category_recipe);
-      alert("Your page is deleted go back home");
+      alert("Your recipe is deleted go back home");
     } else {
       alert("Ops! seems that you are not the one");
     }
@@ -87,12 +87,12 @@ const Level2_Meal = ({ recipes }) => {
         ) : null
       )}
       <button
-        className="btn-back"
+        className="btn-delete"
         onClick={() => {
           deleteItem();
         }}
       >
-        Delete Recipe
+        Delete
       </button>
       <button className="btn-back" onClick={() => navigate(-1)}>
         Back to previous page
