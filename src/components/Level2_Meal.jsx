@@ -7,9 +7,17 @@ const Level2_Meal = ({ recipes }) => {
 
   const { food } = useParams();
 
+  //Get category for deleting
   let category_recipe;
-
+  function callCategory() {
+    recipes.find((recipe) => {
+      if (recipe.urlname === food) {
+        category_recipe = recipe.category;
+      }
+    });
+  }
   function deleteItem() {
+    callCategory();
     alert("OH oh you need permision! :)");
     const userInput = prompt("Enter the password: ");
     if (userInput === "1234") {
@@ -67,7 +75,6 @@ const Level2_Meal = ({ recipes }) => {
                     {recipe.ingredients.split(";").map((ingredient) => (
                       <li>{ingredient}</li>
                     ))}
-                    {(category_recipe = recipe.category)}
                   </ul>
                 }
               </div>
