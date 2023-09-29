@@ -49,7 +49,12 @@ function App() {
 
             <Route
               path="/:category"
-              element={<Level1_Category recipes={recipes} />}
+              element={
+                <Level1_Category
+                  recipes={recipes}
+                  setRecipeFetchToggle={setRecipeFetchToggle}
+                />
+              }
             />
             <Route
               path="/:category/:food"
