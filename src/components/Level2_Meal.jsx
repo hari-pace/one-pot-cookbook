@@ -11,10 +11,12 @@ const Level2_Meal = ({ recipes }) => {
 
   function deleteItem() {
     alert("OH oh you need permision! :)");
-    const userInput = prompt("Enter your input: ");
+    const userInput = prompt("Enter the password: ");
     if (userInput === "1234") {
       fetchData(category_recipe);
       alert("Your page is deleted go back home");
+    } else {
+      alert("Ops! seems that you are not the one");
     }
   }
 
